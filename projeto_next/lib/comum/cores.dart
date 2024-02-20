@@ -8,4 +8,5 @@ class CoresApp{
    static const Color roxoBaixoGradiente = Color.fromARGB(255, 188, 123, 252);
     static const Color azulBaixoGradiente = Color.fromARGB(255, 85, 177, 243);
     static const Color roxoAltoGradiente = Color.fromARGB(211, 44, 28, 103);
+    static const Color cinza = Color.fromARGB(172, 145, 214, 251);
 }

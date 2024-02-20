@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:projeto_next/comum/cores.dart';
+import 'package:projeto_next/view/tela_conectaApi.dart';
 import 'package:projeto_next/view/tela_lista.dart';
 
 class telaHome extends StatelessWidget {
@@ -12,7 +13,7 @@ class telaHome extends StatelessWidget {
         title: Column(
           children: [
             Text(
-              "Sugestões",
+              "Home",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             Image.asset("images/logo.png", height: 45),
@@ -28,11 +29,14 @@ class telaHome extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              CoresApp.medioGradiente,
-              CoresApp.azulBaixoGradiente,
+                  CoresApp.topGradiente,
+ CoresApp.baixoGradiente,
+ CoresApp.medioGradiente,
             ],
+            
           ),
         ),
+        
         
         child: Center(
           child: Column(
@@ -49,11 +53,13 @@ style: ButtonStyle(
                   ),
                   onPressed: ()
                   {
-                   Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => telaList())
-                    );
+                  Navigator.push(
+              context,
+               MaterialPageRoute(builder: (context)=> telaList(),
+               ), 
+            );
                   },
-          child: const Text(style: TextStyle(fontSize: 18.0), "Visualizar Lista!"),
+          child: const Text(style: TextStyle(fontSize: 18.0), "Lista de Sugestões"),
               ),
                ElevatedButton(
 style: ButtonStyle(
@@ -66,9 +72,13 @@ style: ButtonStyle(
                   ),
                   onPressed: ()
                   {
-                    Navigator.of(context).pushReplacementNamed('/');
+                   Navigator.push(
+              context,
+               MaterialPageRoute(builder: (context)=> telaApi(),
+               ), 
+            );
                   },
-          child: const Text(style: TextStyle(fontSize: 18.0), "Visualizar API!"),
+          child: const Text(style: TextStyle(fontSize: 18.0), "Membros"),
               ),
             ],
               

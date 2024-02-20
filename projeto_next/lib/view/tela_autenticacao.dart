@@ -6,10 +6,10 @@ class telaAutenticacao extends StatefulWidget {
   const telaAutenticacao({super.key});
 
   @override
-  State<telaAutenticacao> createState() => _telaAutenticacaoState();
+  State<telaAutenticacao> createState() => telaAutenticacaoState();
 }
 
-class _telaAutenticacaoState extends State<telaAutenticacao> {
+class telaAutenticacaoState extends State<telaAutenticacao> {
   bool entrar=true;
   final _keyForm = GlobalKey<FormState>();
 

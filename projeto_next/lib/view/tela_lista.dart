@@ -23,12 +23,6 @@ class telaList extends StatelessWidget {
         centerTitle: true,
         backgroundColor: CoresApp.roxoAltoGradiente,
         toolbarHeight: 65,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -36,8 +30,9 @@ class telaList extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              CoresApp.medioGradiente,
-              CoresApp.azulBaixoGradiente,
+                      CoresApp.topGradiente,
+ CoresApp.baixoGradiente,
+ CoresApp.medioGradiente,
             ],
           ),
         ),
@@ -48,8 +43,10 @@ class telaList extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(20)),
               ),
               leading: Image.asset(lista_filmes[filme].icon),
-              title: Text(lista_filmes[filme].nome),
-              trailing: Text("Diretor:${lista_filmes[filme].diretor}"),
+              title: Text(lista_filmes[filme].nome,
+                      style: TextStyle(fontSize: 14.8,fontWeight: FontWeight.bold)),
+              trailing: Text("Diretor:${lista_filmes[filme].diretor}",
+                      style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.bold)),
               onTap: () {
                 showDialog(
                   context: context,
