@@ -43,12 +43,9 @@ class telaApiState extends State<telaApi> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-                CoresApp.topGradiente,
- CoresApp.baixoGradiente,
- CoresApp.medioGradiente,
-             
-            
-              
+              CoresApp.topGradiente,
+              CoresApp.baixoGradiente,
+              CoresApp.medioGradiente,
             ],
           ),
         ),
@@ -68,11 +65,13 @@ class telaApiState extends State<telaApi> {
                   return ListTile(
                     title: Text(
                       snapshot.data![index]['username'],
-                      style: TextStyle(fontSize: 18.0,fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: 18.0, fontWeight: FontWeight.bold),
                     ),
                     subtitle: Text(
                       snapshot.data![index]['email'],
-                      style: TextStyle(fontSize: 18.0,fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: 18.0, fontWeight: FontWeight.bold),
                     ),
                     leading: Icon(Icons.account_circle_rounded),
                     onTap: () {

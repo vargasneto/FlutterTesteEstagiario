@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_next/comum/cores.dart';
 import 'package:projeto_next/repositories/filmes_repository.dart';
-import 'package:projeto_next/view/tela_home.dart';
 
 class telaList extends StatelessWidget {
   const telaList({Key? key}) : super(key: key);
@@ -30,9 +29,9 @@ class telaList extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-                      CoresApp.topGradiente,
- CoresApp.baixoGradiente,
- CoresApp.medioGradiente,
+              CoresApp.topGradiente,
+              CoresApp.baixoGradiente,
+              CoresApp.medioGradiente,
             ],
           ),
         ),
@@ -44,15 +43,18 @@ class telaList extends StatelessWidget {
               ),
               leading: Image.asset(lista_filmes[filme].icon),
               title: Text(lista_filmes[filme].nome,
-                      style: TextStyle(fontSize: 14.8,fontWeight: FontWeight.bold)),
+                  style:
+                      TextStyle(fontSize: 14.8, fontWeight: FontWeight.bold)),
               trailing: Text("Diretor:${lista_filmes[filme].diretor}",
-                      style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.bold)),
+                  style:
+                      TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold)),
               onTap: () {
                 showDialog(
                   context: context,
                   builder: (context) {
                     return AlertDialog(
-                      title: Text("${lista_filmes[filme].nome} - ${lista_filmes[filme].data_lancamento.toString()}"),
+                      title: Text(
+                          "${lista_filmes[filme].nome} - ${lista_filmes[filme].data_lancamento.toString()}"),
                       content: Text(
                         "\nGenêro: ${lista_filmes[filme].genero}\n\nSinopse: ${lista_filmes[filme].sinopse}",
                         style: TextStyle(fontSize: 18.0),
@@ -60,11 +62,8 @@ class telaList extends StatelessWidget {
                       actions: [
                         MaterialButton(
                           onPressed: () {
-                              Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => telaHome())
-                    );
+                            Navigator.pop(context);
                           },
-                  
                           child: Icon(Icons.close),
                         ),
                       ],

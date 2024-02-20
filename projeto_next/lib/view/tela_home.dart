@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:projeto_next/comum/cores.dart';
 import 'package:projeto_next/view/tela_conectaApi.dart';
@@ -7,7 +6,7 @@ import 'package:projeto_next/view/tela_lista.dart';
 class telaHome extends StatelessWidget {
   const telaHome({super.key});
 
- Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Column(
@@ -29,61 +28,58 @@ class telaHome extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-                  CoresApp.topGradiente,
- CoresApp.baixoGradiente,
- CoresApp.medioGradiente,
+              CoresApp.topGradiente,
+              CoresApp.baixoGradiente,
+              CoresApp.medioGradiente,
             ],
-            
           ),
         ),
-        
-        
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
-style: ButtonStyle(
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        side: BorderSide(color: Colors.deepPurpleAccent),
-                      ),
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      side: BorderSide(color: Colors.deepPurpleAccent),
                     ),
                   ),
-                  onPressed: ()
-                  {
+                ),
+                onPressed: () {
                   Navigator.push(
-              context,
-               MaterialPageRoute(builder: (context)=> telaList(),
-               ), 
-            );
-                  },
-          child: const Text(style: TextStyle(fontSize: 18.0), "Lista de Sugestões"),
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => telaList(),
+                    ),
+                  );
+                },
+                child:
+                    const Text(style: TextStyle(fontSize: 18.0), "Sugestões"),
               ),
-               ElevatedButton(
-style: ButtonStyle(
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        side: BorderSide(color: Colors.deepPurpleAccent),
-                      ),
+              ElevatedButton(
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      side: BorderSide(color: Colors.deepPurpleAccent),
                     ),
                   ),
-                  onPressed: ()
-                  {
-                   Navigator.push(
-              context,
-               MaterialPageRoute(builder: (context)=> telaApi(),
-               ), 
-            );
-                  },
-          child: const Text(style: TextStyle(fontSize: 18.0), "Membros"),
+                  
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => telaApi(),
+                    ),
+                  );
+                },
+                child: const Text(style: TextStyle(fontSize: 18.0), "Membros"),
               ),
             ],
-              
-            ),
-          
+          ),
         ),
       ),
     );
